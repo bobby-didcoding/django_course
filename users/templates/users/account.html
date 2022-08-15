@@ -4,7 +4,12 @@
 </head>
 <body>
     <h1>Welcome to your account {{request.user.userprofile.full_name}}</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Submit!</button>
+    </form>
     <br>
-    <a href="{% url 'users:sign-out' %}">Sign out</a>
+    <a href="{% url 'users:sign-up' %}">Sign up</a>
 </body>
 </html>

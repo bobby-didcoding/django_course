@@ -1,14 +1,15 @@
 from django.views import generic
-from django.shortcuts import redirect, reverse
+from django.shortcuts import redirect, reverse, render
 from django.contrib.auth import logout, login
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
-from .forms import UserForm, AuthForm
+from .forms import UserForm, AuthForm, UserProfileForm, UserAlterationForm
+from .models import UserProfile
 
 class SignUpView(generic.FormView):
     """
-    User sign up page.
+    Basic user sign up page.
 
     **Template:**
 
@@ -25,7 +26,7 @@ class SignUpView(generic.FormView):
 
 class SignInView(generic.FormView):
     """
-    User sign in page.
+    Basic user sign up page.
 
     **Template:**
 
@@ -42,28 +43,35 @@ class SignInView(generic.FormView):
 
 def sign_out(request):
 	"""
-    User sign out page.
+    Basic user sign out page.
     """
 	logout(request)
 	return redirect(reverse('users:sign-in'))
 
 
-class AccountView(generic.TemplateView):
+@login_required
+def AccountView(request):
     """
-    User account page. CRUD user profile.
+    User account page. CRUD account details.
 
     **Template:**
 
     :template:`users/account.html`
     """
-    template_name = "users/account.html"
+    up = request.user.userprofile
+    up_form = UserProfileForm(instance = up)
+    context = {'form': up_form}
 
-    @method_decorator(login_required)
-    def dispatch(self, *args, **kwargs):
-        return super().dispatch(*args, **kwargs)
+    if request.method == "POST":
+        form = UserProfileForm(instance = up, data = request.POST)
+        if form.is_valid:
+            form.save()
+            return redirect('/account/')
+    else:
+        return render(request, 'users/account.html', context)
 
-
-class UserInfoView(generic.TemplateView):
+@login_required
+def UserInfoView(request):
     """
     User information page. CRUD profile details.
 
@@ -71,8 +79,14 @@ class UserInfoView(generic.TemplateView):
 
     :template:`users/info.html`
     """
-    template_name = "users/info.html"
+    user = request.user
+    u_form = UserAlterationForm(instance = user)
+    context = {'form': u_form}
 
-    @method_decorator(login_required)
-    def dispatch(self, *args, **kwargs):
-        return super().dispatch(*args, **kwargs)
+    if request.method == "POST":
+        form = UserProfileForm(instance = user, data = request.POST)
+        if form.is_valid:
+            form.save()
+            return redirect('/user-info/')
+    else:
+        return render(request, 'users/info.html', context)
