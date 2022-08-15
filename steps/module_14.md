@@ -1,7 +1,7 @@
-# Django course - Module 15
+# Django course - Module 14
 This is my Django course. I hope you like it.
 
-> These notes follow on from steps/module_14.md
+> These notes follow on from steps/module_13.md
 ***
 ***
 
@@ -51,8 +51,6 @@ django_course\  <--This is the root directory
         >alert.js
         >main.css
         >main.js
-        >stripe.css
-        >stripe.js
     staticfiles\
     steps\
     templates\
@@ -89,8 +87,8 @@ django_course\  <--This is the root directory
 ```
 If in doubt, run the following git commands:
 ```
-git checkout module_15
-git pull origin module_15
+git checkout module_14
+git pull origin module_14
 ```
 
 ## Steps/Commands
