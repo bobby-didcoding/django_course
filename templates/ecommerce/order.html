@@ -1,0 +1,26 @@
+{% extends 'base/base.html' %}
+{% load static ecommerce_tags %}
+
+{% block content %}
+
+<h3>Order - {{object.item.title}}</h3>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <form>
+                <label for="date">Date</label>
+                <input type="text" readonly value="{{object.created}}">
+                <label for="stock">Total price</label>
+                <input type="text" readonly value="{{object.amount}}">
+                <label for="quantity">Quantity</label>
+                <input type="number" value="{{object.quantity}}">
+            </form>
+        </div>
+    <div class="col-6">
+        <img src="{{object.item.image.url}}" alt="{{object.item.title}}" class="image">
+    </div>
+    
+</div>
+</div>
+{% endblock %}
