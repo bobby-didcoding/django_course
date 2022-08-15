@@ -1,0 +1,27 @@
+{% extends 'base/base.html' %}
+{% load static ecommerce_tags %}
+
+{% block content %}
+
+<h3>Item - {{object.title}}</h3>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <form>
+                <label for="stock">Price per item</label>
+                <input type="text" readonly value="{{object.variable_price}}">
+                <label for="stock">Stock</label>
+                <input type="text" name="stock-{{object.id}}" id="stock-input-{{object.id}}" class="stock-input-{{object.id}}" readonly value="{{object.stock}}">
+                <label for="quantity">Quantity</label>
+                <input type="number" min="1" name="quantity-{{object.id}}" id="quantity-input-{{object.id}}" class="quantity-input-{{object.id}}" value="0">
+            </form>
+        </div>
+    <div class="col-6">
+        <img src="{{object.image.url}}" alt="{{object.title}}" class="image">
+    </div>
+    
+</div>
+    {% item_button item %}
+</div>
+{% endblock %}

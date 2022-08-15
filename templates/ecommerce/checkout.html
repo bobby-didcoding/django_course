@@ -1,0 +1,90 @@
+{% extends 'base/base.html' %}
+{% load static ecommerce_tags mathfilters djmoney %}
+
+{% block extend_head %}
+<link rel="stylesheet" href="{% static 'stripe.css' %}">
+{% endblock %}
+
+{% block extend_foot %}
+<script src="https://js.stripe.com/v3/"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
+<script src="{% static 'stripe.js' %}" defer></script>
+<script type="text/javascript">
+    var stripe_key = '{{stripe_key|safe}}'
+</script>
+{% endblock %}
+
+{% block content %}
+
+<h1>Checkout</h1>
+
+<div class="row">
+    <div class="col-75">
+      <div class="container">
+        {% if sources.has_sources %}
+        <h4>Select a card to use</h4>
+        <table id="saved-cards">
+            <thead>
+            <tr>
+
+                <th>Type</th>
+                <th>Card Number</th>
+                <th>Exp date</th>
+                <th>Is default</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for s in sources.sources %}
+            <tr>
+
+                <td>{{s.type}}</td>
+                <td>{{s.card}}</td>
+                <td>{{s.exp}}</td>
+                <td>{{s.default}}</td>
+                <td>{% if not s.default %}<a class="btn btn-warning source" value="{{s.stripe_id}}" >Make default</a>{% endif %}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <br>
+        <a class="btn btn-warning pay" value="{{default_card.stripe_id}}" >Pay <i class="item-total-price">{{request.user.cart.amount|div:100}}</i> with default card</a>
+        <br>
+
+        {% endif %}
+        <br>
+        <h4>Pay with new card</h4>
+        <form id="payment-form" style="width: 100%">
+            {% csrf_token %}
+            <div id="card-element"><!--Stripe.js injects the Card Element--></div>
+            <button id="submit" type="submit">
+            Pay <i class="item-total-price">£{{request.user.cart.amount|div:100}}</i> with new card
+            </button>
+            <p id="card-error" role="alert"></p>
+            <p class="result-message hidden">
+            Payment succeeded, see the result in your
+            <a href="" target="_blank">Stripe dashboard.</a> Refresh the page to pay again.
+            </p>
+        </form>
+      </div>
+    </div>
+  
+    <div class="col-25">
+      <div class="container">
+        <h4>Cart
+          <span class="price" style="color:black">
+            <i class="fa fa-cart-shopping"></i>
+            <b class="item-count">{{request.user.cart.item_count}}</b>
+          </span>
+        </h4>
+        {% for object in request.user.cart.items.all %}
+        <p class="item-list-{{object.item.id}}">{% item_button_v2 object.item %}
+            <a href="{{object.item.content_object.get_absolute_url}}">{{object.item.content_object.title}}</a> <span class="price">£{{object.amount|div:100}}</span></p>
+        {% endfor %}
+        <hr>
+        <p>Total <span class="price" style="color:black"><b class="item-total-price">£{{ request.user.cart.amount|div:100 }}</b></span></p>
+      </div>
+    </div>
+  </div>
+{% endblock %}

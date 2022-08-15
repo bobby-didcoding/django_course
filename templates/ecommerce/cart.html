@@ -1,0 +1,53 @@
+{% extends 'base/base.html' %}
+{% load static ecommerce_tags mathfilters %}
+
+{% block content %}
+
+<h1>Cart</h1>
+
+
+<div class="row">
+  <div class="col-75">
+    {% for object in request.user.cart.items.all %}
+    <div class="column item-list-{{object.item.id}}">
+      <div class="card">
+        
+        <img src="{{object.item.image.url}}" alt="{{object.item.title}}" style="width:100%">
+        <h2>{{object.item.title}}</h2>
+        <p class="price">{{object.item.price}}</p>
+        <p>{{object.item.description}}</p>
+        <p>  
+          <form>
+            <div class="form-group row">
+              <div class="col-sm-2">
+              {% item_button_v2 object.item %}
+              </div>
+              <label for="quantity" class="col-sm-4 col-form-label">Quantity</label>
+              <div class="col-sm-6">
+                <input readonly class="form-control-plaintext" name="quantity-{{object.id}}" id="quantity-input-{{object.id}}" class="quantity-input-{{object.id}}" value="{{object.quantity}}">
+              </div>
+            </div>
+            
+          </form>
+        </p>
+        <p><a class="btn btn-primary" href="{{object.item.get_absolute_url}}" >&#x2607;</a></p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="col-25">
+    <div class="container">
+      <h4>Summary
+        <span class="price" style="color:black">
+          <i class="fa fa-cart-shopping"></i>
+          <b class="item-count">{{request.user.cart.item_count}}</b>
+        </span>
+      </h4>
+      <hr>
+      <p>Total <span class="price" style="color:black"><b class="item-total-price">£{{request.user.cart.amount|div:100}}</b></span></p>
+      <p><a class="btn btn-success" href="{% url 'ecommerce:checkout' %}">Go to checkout</a></p>
+    </div>
+  </div>
+</div>
+{% endblock %}
