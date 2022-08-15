@@ -38,8 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core' #this is our new application
-]
+    'core',
+    'users', # This is our new app
+    'django_extensions', # This is the new extensions library
+]   
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
