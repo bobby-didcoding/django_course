@@ -47,12 +47,6 @@ django_course\  <--This is the root directory
         >main.css
     staticfiles\
     steps\
-        >admin.md
-        >basics.md
-        >basics_part_2.md
-        >debug.md
-        >user_app_part_2.md
-        >user_app.md
     templates\
         base\
             >base.html
@@ -79,9 +73,6 @@ django_course\  <--This is the root directory
         >urls.py
         >views.py
     venv\
-        include\
-        Lib\
-        Scripts\
     >.gitignore
     >db.sqlite3
     >manage.py
@@ -99,7 +90,7 @@ git pull origin module_11
 >Note: Please 'cd' into the root directory and fire up your virtual environment!
 
 Okay, lets start where we left off in the last module. We have built our models.
-In this module we will be building a manager that will handle the flow of data between the frontend, ecommerce app and [Stripes API](https://stripe.com/docs/api?lang=python). 
+In this module we will be building a manager that will handle the flow of data between the frontend, e-commerce app and [Stripes API](https://stripe.com/docs/api?lang=python). 
 
 Lets get started.
 
@@ -138,7 +129,7 @@ class EcommerceManager:
     def stripe_id(self):
         '''
         Returns a user stripe id.
-        The user's stripe id is stored in thier linked wallet instance.
+        The user's stripe id is stored in their linked wallet instance.
         '''
         wallet = self.wallet_object()
         if not wallet.stripe_id:
@@ -586,12 +577,6 @@ django_course\  <--This is the root directory
         >main.css
     staticfiles\
     steps\
-        >admin.md
-        >basics.md
-        >basics_part_2.md
-        >debug.md
-        >user_app_part_2.md
-        >user_app.md
     templates\
         base\
             >base.html
@@ -618,9 +603,6 @@ django_course\  <--This is the root directory
         >urls.py
         >views.py
     venv\
-        include\
-        Lib\
-        Scripts\
     >.gitignore
     >db.sqlite3
     >manage.py

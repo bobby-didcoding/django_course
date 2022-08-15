@@ -93,7 +93,7 @@ user.save()
 user.first_name
 ```
 
-We have now assigned "Bobby" to the field 'first_name' and commited it to the database by calling .save(). We then checked the 'first_name' field once more. The response should be 'Bobby'.
+We have now assigned "Bobby" to the field 'first_name' and committed it to the database by calling .save(). We then checked the 'first_name' field once more. The response should be 'Bobby'.
 
 This change will be visible in the built-in admin page. Visit [http://127.0.0.1:8000/admin/auth/user/](http://127.0.0.1:8000/admin/auth/user/) and see for yourself.
 > Note: Don't forget to fire up a local server, refresh your browser and sign in if necessary.

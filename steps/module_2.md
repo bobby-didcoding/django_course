@@ -48,7 +48,7 @@ Our application will be called 'core'. This application will hold the logic for 
 python manage.py startapp core
 ```
 
-The settings.py file is where we save out project settings. Django will only know to include our core app in the project when we register it. Open django_course/settings.py and register the new application in INSTALLED_APPS. Replace the cuurent settings with the following snippet.
+The settings.py file is where we save out project settings. Django will only know to include our core app in the project when we register it. Open django_course/settings.py and register the new application in INSTALLED_APPS. Replace the current settings with the following snippet.
 ```
 INSTALLED_APPS = [
     'django.contrib.admin',

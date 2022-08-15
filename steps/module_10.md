@@ -34,12 +34,6 @@ django_course\  <--This is the root directory
         >main.css
     staticfiles\
     steps\
-        >admin.md
-        >basics.md
-        >basics_part_2.md
-        >debug.md
-        >user_app_part_2.md
-        >user_app.md
     templates\
         base\
             >base.html
@@ -66,9 +60,6 @@ django_course\  <--This is the root directory
         >urls.py
         >views.py
     venv\
-        include\
-        Lib\
-        Scripts\
     >.gitignore
     >db.sqlite3
     >manage.py
@@ -85,7 +76,7 @@ git pull origin module_10
 
 >Note: Please 'cd' into the root directory and fire up your virtual environment!
 
-**Warning** we are about to switch things up a little. This is probably intermediate level but I'll go nice and slowly!!
+**Warning** we are about to switch things up a little. This is probably intermediate level but I'll go nice and slow!!
 
 When putting this course together I was scratching my head to figure out what type of website I could use for demo purposes. The consensus I got when asking around was e-commerce! So thats what we're going to do.
 
@@ -522,12 +513,6 @@ django_course\  <--This is the root directory
         >main.css
     staticfiles\
     steps\
-        >admin.md
-        >basics.md
-        >basics_part_2.md
-        >debug.md
-        >user_app_part_2.md
-        >user_app.md
     templates\
         base\
             >base.html
@@ -554,9 +539,6 @@ django_course\  <--This is the root directory
         >urls.py
         >views.py
     venv\
-        include\
-        Lib\
-        Scripts\
     >.gitignore
     >db.sqlite3
     >manage.py

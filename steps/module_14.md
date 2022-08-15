@@ -55,16 +55,6 @@ django_course\  <--This is the root directory
         >stripe.js
     staticfiles\
     steps\
-        >account.md
-        >admin.md
-        >basics.md
-        >basics_part_2.md
-        >debug.md
-        >env.md
-        >shop_part_one.md
-        >style.md
-        >user_app_part_2.md
-        >user_app.md
     templates\
         base\
             >base.html
@@ -91,10 +81,6 @@ django_course\  <--This is the root directory
         >urls.py
         >views.py
     venv\
-        include\
-        Lib\
-        Scripts\
-    .env
     >.gitignore
     >db.sqlite3
     >manage.py
@@ -466,10 +452,6 @@ django_course\  <--This is the root directory
         >urls.py
         >views.py
     venv\
-        include\
-        Lib\
-        Scripts\
-    .env
     >.gitignore
     >db.sqlite3
     >manage.py

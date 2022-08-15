@@ -510,12 +510,6 @@ django_course\  <--This is the root directory
         >main.css
     staticfiles\
     steps\
-        >admin.md
-        >basics.md
-        >basics_part_2.md
-        >debug.md
-        >user_app_part_2.md
-        >user_app.md
     templates\
         base\
             >base.html
@@ -542,9 +536,6 @@ django_course\  <--This is the root directory
         >urls.py
         >views.py
     venv\
-        include\
-        Lib\
-        Scripts\
     >.gitignore
     >db.sqlite3
     >manage.py

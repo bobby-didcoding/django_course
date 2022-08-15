@@ -32,7 +32,7 @@ In this module, we will be start our project. To do this we will need to create 
 ```
 python -m venv venv
 ```
-Now activate the virtual environement with the following command.
+Now activate the virtual environment with the following command.
 ```
 # windows machine
 venv\Scripts\activate.bat
@@ -50,7 +50,7 @@ The first and most import package is, of course, Django! The following command w
 ```
 pip install django
 ```
-We need a file to store a list of project requirements. This will help you when recreating the project in different environements. Use the following command to create a file called requirements.txt.
+We need a file to store a list of project requirements. This will help you when recreating the project in different environments. Use the following command to create a file called requirements.txt.
 ```
 pip freeze > requirements.txt
 ```

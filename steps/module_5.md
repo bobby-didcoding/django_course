@@ -51,7 +51,7 @@ git pull origin module_5
 ## Steps/Commands
 >Note: Please 'cd' into the root directory and fire up your virtual environment!
 
-Having user accounts on a website is massivley useful, both for customer engagement and retention, and in terms of gathering data which can be used for advertising purposes. Django has a built-in tool that help us deal with the complexities of managing and authenticating users. 
+Having user accounts on a website is massively useful, both for customer engagement and retention, and in terms of gathering data which can be used for advertising purposes. Django has a built-in tool that help us deal with the complexities of managing and authenticating users. 
 
 In this module, we will creating our own user profile model to capture user specific information. We will start a new application to group our common logic surrounding our users.
 
@@ -199,7 +199,6 @@ class Migration(migrations.Migration):
                 ('country', models.CharField(blank=True, choices=[('*Select Country', '*Select Country'), ('Afghanistan', 'Afghanistan'), ...)], max_length=100, null=True, verbose_name='Country')),
                 ('longitude', models.CharField(blank=True, max_length=50, null=True, verbose_name='Longitude')),
                 ('latitude', models.CharField(blank=True, max_length=50, null=True, verbose_name='Latitude')),
-                ('avatar', models.ImageField(blank=True, default='default_avatar.jpg', null=True, upload_to='avatar')),
                 ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
             options={

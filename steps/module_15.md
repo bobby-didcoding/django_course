@@ -53,16 +53,6 @@ django_course\  <--This is the root directory
         >main.js
     staticfiles\
     steps\
-        >account.md
-        >admin.md
-        >basics.md
-        >basics_part_2.md
-        >debug.md
-        >env.md
-        >shop_part_one.md
-        >style.md
-        >user_app_part_2.md
-        >user_app.md
     templates\
         base\
             >base.html
@@ -89,10 +79,6 @@ django_course\  <--This is the root directory
         >urls.py
         >views.py
     venv\
-        include\
-        Lib\
-        Scripts\
-    .env
     >.gitignore
     >db.sqlite3
     >manage.py
@@ -113,7 +99,7 @@ Okay lets start where we left off in the last module. We now have views and url'
 
 Lets get started.
 
-1) Templates - We need to create new html files for each of the main ecommerce views that we have created. Go ahead and create a new directory in /templates and call it ecommerce.
+1) Templates - We need to create new html files for each of the main e-commerce views that we have created. Go ahead and create a new directory in /templates and call it ecommerce.
 
 Create a new html file in /templates/ecommerce and call it items.html. Use the following code.
 ```
@@ -444,21 +430,20 @@ django_course\  <--This is the root directory
         >main.css
     staticfiles\
     steps\
-        >account.md
-        >admin.md
-        >basics.md
-        >basics_part_2.md
-        >debug.md
-        >env.md
-        >shop_part_one.md
-        >style.md
-        >user_app_part_2.md
-        >user_app.md
     templates\
         base\
             >base.html
         core\
             >index.html
+        ecommerce\ <--New directory
+            >cart.html
+            >checkout.html
+            >item_button_v2.html
+            >item_button.html
+            >item.html
+            >items.html
+            >order.html
+            >orders.html
         users\
             >account.html
             >info.html
@@ -480,10 +465,6 @@ django_course\  <--This is the root directory
         >urls.py
         >views.py
     venv\
-        include\
-        Lib\
-        Scripts\
-    .env
     >.gitignore
     >db.sqlite3
     >manage.py

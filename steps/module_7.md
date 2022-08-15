@@ -239,7 +239,7 @@ def UserInfoView(request):
         return render(request, 'users/info.html', context)
 ```
 
-3) URL change - We have changed our account view from a class based view to a functionbased view. Therefore, we must now change our users app url file. Open /users/urls.py and change the code to the following.
+3) URL change - We have changed our account view from a class based view to a function based view. Therefore, we must now change our users app url file. Open /users/urls.py and change the code to the following.
 
 ```
 from django.urls import path
