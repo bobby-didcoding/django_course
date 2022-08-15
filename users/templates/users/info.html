@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <h1>Info - {{request.user.userprofile.full_name}}</h1>
+    <br>
+    <a href="{% url 'users:sign-out' %}">Sign out</a>
+</body>
+</html>
