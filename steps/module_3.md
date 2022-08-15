@@ -209,8 +209,8 @@ django_course\  <--This is the root directory
         >settings.py
         >urls.py
         >wsgi.py
-    static\
-    staticfiles\
+    static\ <-- New directory
+    staticfiles\ <-- New directory
     steps\
     venv\
     >.gitignore
