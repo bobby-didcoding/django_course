@@ -39,9 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
-    'users', # This is our new app
-    'django_extensions', # This is the new extensions library
-]   
+    'ecommerce', # This is our new app
+    'users', 
+    'django_extensions',
+    'djmoney',
+    'fontawesomefree',
+    'mathfilters',
+]  
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -68,6 +72,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django_course.context.project_context'
             ],
         },
     },
@@ -162,3 +167,6 @@ if DEBUG:
 LOGIN_URL = "users:sign-in"
 LOGIN_REDIRECT_URL = "core:home"
 LOGOUT_REDIRECT_URL = "core:home"
+
+STRIPE_SECRET_KEY = 'pk_test_51IT7atCr11ZC31qiS6hXgpDC3sIEGbqruuVMipenWcFprOPfXIUxl9Q2Dsj8ItLglsqcDgJi4bJZFVd78f3whGZs00m6pmSbT0'
+STRIPE_PUBLISHABLE_KEY = 'sk_test_51IT7atCr11ZC31qiKnOUx29WaJ0T63wPKsXdxoNFufx8zdPw9Y2VC8WSEgQRo3dY7jXxCqTxMP4riMnklBYsCqNa00IrxA1xbB'
