@@ -63,7 +63,7 @@ def AccountView(request):
     context = {'form': up_form}
 
     if request.method == "POST":
-        form = UserProfileForm(instance = up, data = request.POST)
+        form = UserProfileForm(instance = up, data = request.POST, files=request.FILES)
         if form.is_valid:
             form.save()
             return redirect('/account/')
