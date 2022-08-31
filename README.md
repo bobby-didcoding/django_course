@@ -21,7 +21,7 @@ First you will need to clone down the first module.
 
 ```
 #option 1 - SSH
-git clone --module_1 basics git@github.com:bobby-didcoding/django_course.git .
+git clone --branch module_1 git@github.com:bobby-didcoding/django_course.git .
 
 #option 2 - Github CLI
 gh repo clone bobby-didcoding/django_course .
