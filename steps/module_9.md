@@ -322,7 +322,7 @@ def UserInfoView(request):
     context = {'form': u_form}
 
     if request.method == "POST":
-        form = UserProfileForm(instance = user, data = request.POST)
+        form = UserAlterationForm(instance = user, data = request.POST)
         if form.is_valid:
             form.save()
             return redirect('/user-info/')
