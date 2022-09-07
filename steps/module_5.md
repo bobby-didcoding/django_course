@@ -57,7 +57,7 @@ In this module, we will creating our own user profile model to capture user spec
 
 Lets get started.
 
-1) Packages - We will be using a great library called Django extensions. This gives us access to some handy abstract models and functionality that I use daily. Let's go ahead and install the library and add it to our requirements.txt file.
+1) Packages - We will be using a great library called [Django extensions](https://pypi.org/project/django-extensions/). This gives us access to some handy abstract models and functionality that I use daily. We will also be using [pycountry](https://pypi.org/project/pycountry/) to help us to manage user addresses. Let's go ahead and install the library and add it to our requirements.txt file.
 ```
 pip install django-extensions pycountry
 pip freeze > requirements.txt
@@ -156,7 +156,7 @@ Django has some handy commands that quickly and easily create migration files. U
 ```
 python manage.py makemigrations
 ```
-You will see something similar to this in your log
+You will see something similar to this in your log.
 ```
 Migrations for 'users':
   users\migrations\0001_initial.py
@@ -215,7 +215,7 @@ Let's go ahead and migrate to our database. We have already used the following c
 python manage.py migrate
 ```
 
-You should see this in your terminal log
+You should see this in your terminal log.
 ```
 Operations to perform:
   Apply all migrations: admin, auth, contenttypes, sessions, users
@@ -236,7 +236,7 @@ class UserProfileAdmin(admin.ModelAdmin):
 
 You will now be able to manage UserProfile entries here [http://127.0.0.1:8000/admin/users/userprofile/](http://127.0.0.1:8000/admin/users/userprofile/).
 
->Note: You will notice that the superuser account that was created in the last module does not have a UserProfile. We will fix this.
+>Note: You will notice that the superuser account that was created in the last module does not have a UserProfile. We will fix this soon.
 
 5) Signals - Django includes a “signal dispatcher” which helps decoupled applications get notified when actions occur elsewhere in the framework. In a nutshell, signals allow certain senders to notify a set of receivers that some action has taken place. They’re especially useful when many pieces of code may be interested in the same events.
 Let's go ahead and write some code that will create a UserProfile for every user that signs up (including superusers). Create a new file in /users called signals.py and paste in the following code.
