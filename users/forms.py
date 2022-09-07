@@ -39,7 +39,6 @@ class UserProfileForm(forms.ModelForm):
 	town = forms.CharField(max_length=100, required=False, widget=forms.TextInput())
 	county = forms.CharField(max_length=100, required=False, widget=forms.TextInput())
 	post_code = forms.CharField(max_length=8, required=False, widget=forms.TextInput())
-	country = forms.CharField(max_length=100, required=False, widget=forms.TextInput())
 	country = forms.CharField(max_length=100, required=False, widget=forms.Select(choices=COUNTRIES))
 	
 	class Meta:
