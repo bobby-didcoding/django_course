@@ -89,13 +89,13 @@ git pull origin module_11
 
 >Note: Please 'cd' into the root directory and fire up your virtual environment!
 
-Okay, lets start where we left off in the last module. We have built our models.
+Okay, let's start where we left off in the last module. We have built our models.
 In this module we will be building a manager that will handle the flow of data between the frontend, e-commerce app and [Stripes API](https://stripe.com/docs/api?lang=python). 
 
-Lets get started.
+Let's get started.
 
 
-1) Utilities - Go ahead and create a new file in /ecommerce and call it utils.py. Use the following code. Don't worry - I'l walk you through what we are doing here.
+1) Utilities - Go ahead and create a new file in /ecommerce and call it utils.py. Use the following code. Don't worry - I'll walk you through what we're doing here.
 
 ```
 from dateutil.relativedelta import *
