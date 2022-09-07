@@ -50,7 +50,7 @@ git pull origin module_4
 ## Steps/Commands
 >Note: Please 'cd' into the root directory and fire up your virtual environment!
 
-In this module, we will be exploring Django's database API. We will do this in 2 ways. Firstly, Django has a great built-in admin page straight out of the box. The Admin page allows super users to Create, Read, Update and Delete entries in our database. Secondly, we will use the Django shell. The Django shell is a Python shell that gives you access to the database API included with Django.
+In this module, we will be exploring Django's database API. We will do this in 2 ways. Firstly, Django has a great built-in admin page straight out of the box. The Admin page allows superusers to Create, Read, Update and Delete entries in our database. Secondly, we will use the Django shell. The Django shell is a Python shell that gives you access to the database API included with Django.
 
 Let's start with the built-in admin page. You will need a superuser account to gain access.
 
@@ -69,16 +69,16 @@ After signing in, you will be redirected to your main admin page. Get used to th
 ```
 python manage.py shell
 ```
-You should see the following in your terminal log
+You should see the following in your terminal log.
 ```
 Python 3.10.2 (tags/v3.10.2:a58ebcc, Jan 17 2022, 14:12:15) [MSC v.1929 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 (InteractiveConsole)
 >>> 
 ```
-> Note: '>>>' means that the Django shell is working
+> Note: '>>>' means that the Django shell is working.
 
-Now type the following code into the Django shell
+Now type the following code into the Django shell.
 ```
 from django.contrib.auth.models import User
 user = User.objects.first()
@@ -98,7 +98,7 @@ We have now assigned "Bobby" to the field 'first_name' and committed it to the d
 This change will be visible in the built-in admin page. Visit [http://127.0.0.1:8000/admin/auth/user/](http://127.0.0.1:8000/admin/auth/user/) and see for yourself.
 > Note: Don't forget to fire up a local server, refresh your browser and sign in if necessary.
 
-3) CRUD - Just like the Django shell, Django's built-in admin page allows you to Create, Read, Update and Delete (CRUD) database entires. To demonstrate this, lets add your last name in the built-in admin page [http://127.0.0.1:8000/admin/auth/user/1/change/](http://127.0.0.1:8000/admin/auth/user/1/change/).
+3) CRUD - Just like the Django shell, Django's built-in admin page allows you to Create, Read, Update and Delete (CRUD) database entires. To demonstrate this, let's add your last name in the built-in admin page [http://127.0.0.1:8000/admin/auth/user/1/change/](http://127.0.0.1:8000/admin/auth/user/1/change/).
 
 Add your last name and click save or press enter.
 
