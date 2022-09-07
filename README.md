@@ -21,7 +21,7 @@ First you will need to clone down the first module.
 
 ```
 #option 1 - SSH
-git clone --module_1 basics git@github.com:bobby-didcoding/django_course.git .
+git clone --branch module_1 git@github.com:bobby-didcoding/django_course.git .
 
 #option 2 - Github CLI
 gh repo clone bobby-didcoding/django_course .
@@ -35,7 +35,7 @@ git clone --branch module_1 https://github.com/bobby-didcoding/django_course.git
 ***
 
 ## Following along
-Each module has a walk through video. All videos can be found in my (Django 4.0 tutorial)[https://www.youtube.com/playlist?list=PL5VlxT4gkOFCmtb_BYtZuH5pki_S2AphR] playlist.
+Each module has a walk through video. All videos can be found in my [Django 4.0 tutorial](https://www.youtube.com/playlist?list=PL5VlxT4gkOFCmtb_BYtZuH5pki_S2AphR) playlist.
 
 Please open /steps/module_1 to begin.
 ***
