@@ -86,7 +86,7 @@ It's always good practice to group similar logic into its own application. We ha
 
 Lets get started.
 
-1) Libraries - There are some great libraries that can help with an e-commerce application. Let's get [django-money](https://pypi.org/project/django-money/), [requests](https://pypi.org/project/requests/), [stripe](https://pypi.org/project/stripe/), [fontawesomefree](https://pypi.org/project/fontawesomefree/)), [django-mathfilters](https://pypi.org/project/django-mathfilters/), and [python-dateutil](https://pypi.org/project/python-dateutil/) installed. 
+1) Libraries - There are some great libraries that can help with an e-commerce application. Let's get [django-money](https://pypi.org/project/django-money/), [requests](https://pypi.org/project/requests/), [stripe](https://pypi.org/project/stripe/), [fontawesomefree](https://pypi.org/project/fontawesomefree/), [django-mathfilters](https://pypi.org/project/django-mathfilters/), and [python-dateutil](https://pypi.org/project/python-dateutil/) installed. 
 ```
 pip install django-money requests stripe fontawesomefree django-mathfilters python-dateutil
 pip freeze > requirements.txt
@@ -155,8 +155,8 @@ def project_context(request):
 Whilst you are in settings.py, add the following variables.
 >Note: You will need your test API keys from [Stripe](https://dashboard.stripe.com/test/apikeys)
 ```
-STRIPE_SECRET_KEY = pk_test_xxx
-STRIPE_PUBLISHABLE_KEY = sk_test_xxx
+STRIPE_SECRET_KEY = sk_test_xxx
+STRIPE_PUBLISHABLE_KEY = pk_test_xxx
 ```
 
 3) Models - We are going to need a whole bunch of new tables in our database. Go ahead and open /ecommerce/models.py and add the following code.
