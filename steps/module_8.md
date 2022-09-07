@@ -73,7 +73,7 @@ git pull origin module_8
 
 >Note: Please 'cd' into the root directory and fire up your virtual environment!
 
-In this module we will be start looking at Django template language. Why? well, our project looks terrible so we need to add some structure and styling. Django’s template language is designed to strike a balance between power and ease. It’s designed to feel comfortable to those used to working with HTML.
+In this module we will start looking at Django template language. Why? well, our project looks terrible so we need to add some structure and styling. Django’s template language is designed to strike a balance between power and ease. It’s designed to feel comfortable to those used to working with HTML.
 
 Lets get started.
 
@@ -606,7 +606,7 @@ You will need to run the following command to ensure Django picks up the new fil
 python manage.py collectstatic
 ```
 
-2) HTML structure - Django template language gives us access to a whole range of variables, filters and tags that help us ad logic to our HTML files. Let's begin by changing our template structure. Create the following directory structure in root directory.
+2) HTML structure - Django template language gives us access to a whole range of variables, filters and tags that help us add logic to our HTML files. Let's begin by changing our template structure. Create the following directory structure in root directory.
 ```
 django_course\ <--- Root directory
     ...
