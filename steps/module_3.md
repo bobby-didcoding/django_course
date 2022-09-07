@@ -51,7 +51,7 @@ git pull origin module_3
 ## Steps/Commands
 >Note: Please 'cd' into the root directory and fire up your virtual environment!
 
-In the last module, we constructed our very first web page. In this module, we will be installing a fantastic Django package that will help us understand how our our webpage is rendered and what goes on under the hood. This package is called Django Debug Toolbar.
+In the last module, we constructed our very first web page. In this module, we will be installing a fantastic Django package that will help us understand how our our webpage is rendered and what goes on under the hood. This package is called [Django Debug Toolbar](https://pypi.org/project/django-debug-toolbar/).
 
 1) Install - Open a terminal and use the following command to install a Django Debug Toolbar.
 ```
@@ -134,7 +134,7 @@ django_course\
 
 6) Migrations - Migrations are Django’s way of propagating changes you make to your models (adding a field, deleting a model, etc.) into your database schema. They’re designed to be mostly automatic, but you’ll need to know when to make migrations and when to run them. A new instance will always have a whole bunch of migrations waiting to be migrated. You can do this by running the following command.
 
-> Note: We are using the default db.sqlite3 database. We'll upgrade to something a little more scalable later in this course.
+> Note: We are using the default db.sqlite3 database.
 ```
 python manage.py migrate
 ```
@@ -172,7 +172,7 @@ python manage.py collectstatic
 
 You should see this log.
 ```
-135 static files copied to 'C:\Users\Bobby\Development\django_course\staticfiles'.
+140 static files copied to 'C:\Users\Bobby\Development\django_course\staticfiles'.
 ```
 
 You should now have Django debug toolbar available in your browser!
