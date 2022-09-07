@@ -35,7 +35,7 @@ git clone --branch module_1 https://github.com/bobby-didcoding/django_course.git
 ***
 
 ## Following along
-Each module has a walk through video. All videos can be found in my (Django 4.0 tutorial)[https://www.youtube.com/playlist?list=PL5VlxT4gkOFCmtb_BYtZuH5pki_S2AphR] playlist.
+Each module has a walk through video. All videos can be found in my [Django 4.0 tutorial](https://www.youtube.com/playlist?list=PL5VlxT4gkOFCmtb_BYtZuH5pki_S2AphR) playlist.
 
 Please open /steps/module_1 to begin.
 ***
