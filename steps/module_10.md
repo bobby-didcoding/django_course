@@ -82,11 +82,11 @@ When putting this course together I was scratching my head to figure out what ty
 
 It's always good practice to group similar logic into its own application. We have a core app that handles basic webpage logic. We have a users app to handle user specific data. We now need to create an app to handle everything todo with selling products.
 
-> Note: We will be using [Stripe](https://stripe.com/) to handle payments. However, the code we work through can easily be adapted for other payment processing platforms i.e. Braintree. Please go ahead and create a Stripe account as you'll need it to follow along with this tutorial.
+> Note: We will be using [Stripe](https://stripe.com/) to handle payments. However, the code we work through can easily be adapted for other payment processing platforms i.e. [Braintree](https://www.braintreepayments.com/). Please go ahead and create a Stripe account as you'll need it to follow along with this tutorial.
 
 Lets get started.
 
-1) Libraries - There are some great libraries that can help with an e-commerce application. django-money is one of them. Let's get it installed.
+1) Libraries - There are some great libraries that can help with an e-commerce application. Let's get [django-money](https://pypi.org/project/django-money/), [requests](https://pypi.org/project/requests/), [stripe](https://pypi.org/project/stripe/), [fontawesomefree](https://pypi.org/project/fontawesomefree/)), [django-mathfilters](https://pypi.org/project/django-mathfilters/), and [python-dateutil](https://pypi.org/project/python-dateutil/) installed. 
 ```
 pip install django-money requests stripe fontawesomefree django-mathfilters python-dateutil
 pip freeze > requirements.txt
