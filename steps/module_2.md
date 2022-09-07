@@ -39,7 +39,7 @@ git pull origin module_2
 
 "Django makes it easier to build better web apps more quickly and with less code."
 
-In this module, we will be creating a Django application for our project. A Django application is a Python package that is specifically intended for use in a Django project. An application may use common Django conventions, such as having models, tests, urls, and views submodules. 
+In this module, we will be creating a Django application for our project. A Django application is a Python package that is specifically intended for use in a Django project. An application may use common Django conventions, such as having models, tests, URL's, and views submodules. 
 
 Our application will be called 'core'. This application will hold the logic for our core/main web pages i.e. home, about us, contact us...
 
@@ -62,7 +62,7 @@ INSTALLED_APPS = [
 ```
 
 2) Views - A view function, or view for short, is a Python function that takes a web request and returns a web response. This response can be the HTML contents of a web page, or a redirect, or a 404 error, or an XML document, or an image . . . or anything, really. Lets create our first view. Open django_course/core/views.py and write a view to handle the user request/response logic. Use the following snippet.
->Note: We will be using one of Django's built in views called 'TemplateView'.
+>Note: We will be using one of Django's built in views called ['TemplateView'](https://docs.djangoproject.com/en/4.1/topics/class-based-views/).
 ```
 from django.views import generic
 
@@ -96,7 +96,7 @@ django_course\
         >views.py
 ```
 
-Create HTMl template - create an index.html file in core/templates/core:
+Create HTMl template - Create an index.html file in core/templates/core and use the following snippet of code in the new file.
 
 ```
 <!DOCTYPE html>
@@ -109,7 +109,7 @@ Create HTMl template - create an index.html file in core/templates/core:
 </html>
 ```
 
-4) URL's - A clean, elegant URL scheme is an important detail in a high-quality web application. Django lets you design URLs however you want, with no framework limitations. To design URLs for an app, you create a Python module informally called a URLconf (URL configuration). This module is pure Python code and is a mapping between URL path expressions to Python functions (your views). Go ahead and create a new urls.py file in /core to handle url's for the core application. Use the following snipped of code in the new file.
+4) URL's - A clean, elegant URL scheme is an important detail in a high-quality web application. Django lets you design URLs however you want, with no framework limitations. To design URLs for an app, you create a Python module informally called a URLconf (URL configuration). This module is pure Python code and is a mapping between URL path expressions to Python functions (your views). Go ahead and create a new urls.py file in /core to handle URL's for the core application. Use the following snipped of code in the new file.
 
 ```
 from django.urls import path
@@ -122,7 +122,7 @@ urlpatterns = [
 ]
 ```
 
-Now go ahead and open django_course/urls.py (URLconf)and wire up the core application urls. Replace the code with the following snippet.
+Now go ahead and open django_course/urls.py (URLconf)and wire up the core application URL's. Replace the code with the following snippet.
 
 ```
 from django.contrib import admin
