@@ -25,7 +25,7 @@ git pull origin module_1
 ## Steps/Commands
 You should now have a directory called 'django_course' in your development directory. This will be known as your 'root directory'.
 
-In this module, we will be start our project. To do this we will need to create a virtual environment.
+In this module, we will be starting our project. To do this we need to create a virtual environment.
 >Note: Python virtual env docs can be found [here](https://docs.python.org/3/tutorial/venv.html).
 
 1) Virtual Environment - Open a terminal and use the following command to create a virtual environment. 
@@ -40,7 +40,7 @@ venv\Scripts\activate.bat
 #mac/linux
 source venv/bin/activate
 ```
-You will that your virtual environment is active when your terminal displays the following:
+You will know that your virtual environment is active when your terminal displays the following:
 ```
 (venv) path\to\project\django_course>
 ```
@@ -50,7 +50,7 @@ The first and most import package is, of course, Django! The following command w
 ```
 pip install django
 ```
-We need a file to store a list of project requirements. This will help you when recreating the project in different environments. Use the following command to create a file called requirements.txt.
+We need a file to store a list of project requirements. This will help when recreating the project in different environments. Use the following command to create a file called requirements.txt.
 ```
 pip freeze > requirements.txt
 ```
