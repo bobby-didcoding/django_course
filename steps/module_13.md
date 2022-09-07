@@ -179,7 +179,7 @@ We now need a directory in /templates to store our ecommerce application templat
 ```
 {% load static %}
 
-{% comment %} this adds a plus to allow users to add items to cart!! {% endcomment %}
+{% comment %} this adds an icon that, when clicked, allows users to add items to cart!! {% endcomment %}
 <a class="item btn btn-success" model="{{ target_model }}" id="target_{{ object_id }}" action="add">
 	<i class="item-{{object_id}} fa-solid fa-cart-plus"></i>
 	<span class="item-count-{{ object_id }}"></span>
@@ -191,7 +191,7 @@ Create a new html file in /templates/ecommerce and call it item_button_v2.html. 
 ```
 {% load static %}
 
-{% comment %} this adds a plus to allow users to remove items from cart!! {% endcomment %}
+{% comment %} this adds an icon that, when clicked, allows users to remove items from cart!! {% endcomment %}
 <a style="color:red;" class="item" model="{{ target_model }}" id="target_{{ object_id }}" action="remove"><i class="item-{{object_id}} fa-solid fa-close"></i></a>
 ```
 
