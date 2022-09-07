@@ -65,7 +65,7 @@ git pull origin module_6
 
 >Note: Please 'cd' into the root directory and fire up your virtual environment!
 
-In this module we will be writing the logic to enable users to sign up, sign in and sign out of our application. This will require us to write forms, views, urls and html.
+In this module we will be writing the logic to enable users to sign up, sign in and sign out of our application. This will require us to write forms, views, URL's and Django templates.
 
 1) Django forms - Unless you’re planning to build websites and applications that do nothing but publish content, and don’t accept input from your visitors, you’re going to need to understand and use forms. This module will require 2 forms.
 Create a new file in /users called forms.py and use the following code.
@@ -101,7 +101,7 @@ class AuthForm(AuthenticationForm):
 ```
 
 2) Views - A view function, or view for short, is a Python function that takes a web request and returns a web response. This response can be the HTML contents of a web page, or a redirect, or a 404 error, or an XML document, or an image . . . or anything, really.
-In our case, we will be writing a 2 views to display forms so users can sign up and sign in.
+In our case, we will be writing two views to display forms. The forms will allow users to sign up and sign in.
 Open /users/views.py and use the following code.
 ```
 from django.views import generic
@@ -202,7 +202,7 @@ urlpatterns = [
 ```
 
 Our project has been modularized into applications. Therefore, we now need to register the user application URL's in /django_course/urls.py.
-Use the following code to register the new user application URL's
+Use the following code to register the new user application URL's.
 
 ```
 from django.contrib import admin
@@ -250,7 +250,7 @@ django_course\
     ...
 ```
 
-Create a sign_in.html file in users/templates/users:
+Create a sign_in.html file in users/templates/users and use the following snippet.
 
 ```
 <!DOCTYPE html>
@@ -270,7 +270,7 @@ Create a sign_in.html file in users/templates/users:
 </html>
 ```
 
-Create a sign_up.html file in users/templates/users:
+Create a sign_up.html file in users/templates/users and use the following snippet.
 
 ```
 <!DOCTYPE html>
@@ -290,7 +290,7 @@ Create a sign_up.html file in users/templates/users:
 </html>
 ```
 
-Create a account.html file in users/templates/users:
+Create a account.html file in users/templates/users and use the following snippet.
 
 ```
 <!DOCTYPE html>
@@ -305,7 +305,7 @@ Create a account.html file in users/templates/users:
 </html>
 ```
 
-Create a info.html file in users/templates/users:
+Create a info.html file in users/templates/users and use the following snippet.
 
 ```
 <!DOCTYPE html>
