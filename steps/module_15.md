@@ -330,29 +330,41 @@ Create a new html file in /templates/ecommerce and call it orders.html. Use the 
 
 ```
 {% extends 'base/base.html' %}
-{% load static ecommerce_tags %}
+{% load static  %}
+
 
 {% block content %}
-
-<h3>Order - {{object.item.title}}</h3>
-
-<div class="container">
-    <div class="row">
-        <div class="col-6">
-            <form>
-                <label for="date">Date</label>
-                <input type="text" readonly value="{{object.created}}">
-                <label for="stock">Total price</label>
-                <input type="text" readonly value="{{object.amount}}">
-                <label for="quantity">Quantity</label>
-                <input type="number" readonly value="{{object.quantity}}">
-            </form>
-        </div>
-    <div class="col-6">
-        <img src="{{object.item.image.url}}" alt="{{object.item.title}}" class="image">
+<h1>You Orders</h1>
+<div class="row card-column">
+  {% for object in object_list %}
+  <div class="column">
+    <div class="card">
+      <img src="{{object.item.image.url}}" alt="{{object.item.title}}" style="width:100%">
+      <h2>{{object.item.title}}</h2>
+      <p class="price">{{object.amount}}</p>
+      <p>{{object.item.description}}</p>
+      <p><a class="btn btn-primary" href="{% url 'ecommerce:order' id=object.item.id %}" >&#x2607;</a></p>
     </div>
-    
-</div>
+  </div>
+  {% endfor %}
+
+  <div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+  </div>
 </div>
 {% endblock %}
 ```
