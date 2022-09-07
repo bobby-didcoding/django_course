@@ -89,7 +89,7 @@ When adding functionality I normally take this approach:
 
 Lets get started.
 
-1) Package - We will need to install a package called Pillow that has a whole bunch of handy tools to help us manage images. Use the following command to install Pillow and add it to our requirements file.
+1) Package - We will need to install a package called Pillow that has a whole bunch of handy tools to help us manage images. Use the following command to install [Pillow](https://pypi.org/project/Pillow/) and add it to our requirements file.
 ```
 pip install Pillow
 pip freeze > requirements.txt
@@ -175,7 +175,7 @@ python manage.py migrate
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django import forms
-from .models import UserProfile
+from .models import UserProfile, COUNTRIES
 
 class UserForm(UserCreationForm):
 	'''
@@ -214,7 +214,7 @@ class UserProfileForm(forms.ModelForm):
 	town = forms.CharField(max_length=100, required=False, widget=forms.TextInput())
 	county = forms.CharField(max_length=100, required=False, widget=forms.TextInput())
 	post_code = forms.CharField(max_length=8, required=False, widget=forms.TextInput())
-	country = forms.CharField(max_length=100, required=False, widget=forms.TextInput())
+	country = forms.CharField(max_length=100, required=False, widget=forms.Select(choices=COUNTRIES))
 	
 	class Meta:
 		model = UserProfile
@@ -329,7 +329,7 @@ def UserInfoView(request):
     else:
         return render(request, 'users/info.html', context)
 ```
-4) Templates - We do not have any extra url's so lets move onto templates. Open /templates/users/account.html and change the code to the following.
+4) Templates - We do not have any extra URL's so lets move onto templates. Open /templates/users/account.html and change the code to the following.
 
 ```
 {% extends 'base/base.html' %}
@@ -363,7 +363,7 @@ Now visit [http://localhost:8000/account/](http://localhost:8000/account/) to se
 
 You should now be able to update your avatar with the default 'Choose file' button. Let's make it look pretty with the help of a Javascript package.
 
-5) 3rd party libraries - Django has got a lot of tricks up it's sleeve but there are areas that can be approved with your own bespoke code or the use of a 3rd part library. We have already installed python/django packages such as Pillow and Django Extensions. However, with some small adjustments, we can also use frontend JavaScript libraries to rub some funk on our project. We will be we using a library created by [Krajee](https://plugins.krajee.com/file-input) to improve the look and feel of our avatar field. For it to work correctly, we need to install a JavaScript library called Jquery.
+5) 3rd party libraries - Django has a lot of tricks up it's sleeve but there are areas that can be imporved with your own bespoke code or the use of a 3rd party library. We have already installed python/django packages such as Pillow and Django Extensions. However, with some small adjustments, we can also use frontend JavaScript libraries to rub some funk on our project. We will be we using a library created by [Krajee](https://plugins.krajee.com/file-input) to improve the look and feel of our avatar field. For it to work correctly, we need to install a JavaScript library called [Jquery](https://jquery.com/).
 Open /base/base.html and replace the code with the following.
 
 ```
