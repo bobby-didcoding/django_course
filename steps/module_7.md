@@ -121,7 +121,6 @@ class UserProfileForm(forms.ModelForm):
 	town = forms.CharField(max_length=100, required=False, widget=forms.TextInput())
 	county = forms.CharField(max_length=100, required=False, widget=forms.TextInput())
 	post_code = forms.CharField(max_length=8, required=False, widget=forms.TextInput())
-	country = forms.CharField(max_length=100, required=False, widget=forms.TextInput())
 	country = forms.CharField(max_length=100, required=False, widget=forms.Select(choices=COUNTRIES))
 	
 	class Meta:
@@ -230,7 +229,7 @@ def UserInfoView(request):
     context = {'form': u_form}
 
     if request.method == "POST":
-        form = UserProfileForm(instance = user, data = request.POST)
+        form = UserAlterationForm(instance = user, data = request.POST)
         if form.is_valid:
             form.save()
             return redirect('/user-info/')
@@ -323,12 +322,6 @@ django_course\  <--This is the root directory
         >main.css
     staticfiles\
     steps\
-        >admin.md
-        >basics.md
-        >basics_part_2.md
-        >debug.md
-        >user_app_part_2.md
-        >user_app.md
     templates\
         base\
             >base.html
